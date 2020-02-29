@@ -17,20 +17,29 @@
     </head>
     <body>
         <h2>Python Roadmap</h2>
-        <div>
-            <input type="radio" id="all" name="topics-filter" value="all" checked onclick="filterTopics('all')">
-            <label for="all" id="select-all">All</label>
-        </div>
+        <table>
+            <tr><td>
+                <div>
+                    <input type="radio" id="all" name="topics-filter" value="all" checked onclick="filterTopics('all')">
+                    <label for="all" id="select-all">All</label>
+                </div>
 
-        <div>
-            <input type="radio" id="published" name="topics-filter" value="published" onclick="filterTopics('published')">
-            <label for="published" id="select-published">Published</label>
-        </div>
+                <div>
+                    <input type="radio" id="published" name="topics-filter" value="published" onclick="filterTopics('published')">
+                    <label for="published" id="select-published">Published</label>
+                </div>
 
-        <div>
-            <input type="radio" id="not-published" name="topics-filter" value="not published" onclick="filterTopics('not-published')">
-            <label for="not-published" id="select-not-published">Not published</label>
-        </div>
+                <div>
+                    <input type="radio" id="not-published" name="topics-filter" value="not published" onclick="filterTopics('not-published')">
+                    <label for="not-published" id="select-not-published">Not published</label>
+                </div>
+
+            </td></tr>
+            <tr><td>
+                Search: <input id="search-field" onkeyup="search()"/>
+            </td></tr>
+        </table>
+
         <ul>
             <li>Algorightms in Python
                 <ul>
@@ -421,7 +430,7 @@
                         for (el of document.getElementsByTagName('li')) {
                             let toHide = true;
                             for (child of el.children) {
-                                if (child.tagName === "UL" || child.tagName === "A") {
+                                if ((child.tagName === "UL" && !fullUnpublished(child)) || child.tagName === "A") {
                                     toHide = false;
                                     break;
                                 }
@@ -463,6 +472,70 @@
                     }
                 }
                 return hasPublished && isAllPublished;
+            };
+
+            function fullUnpublished(el) {
+                let hasInnerLinks = false;
+                for (child of el.children)
+                    for (inner of child.children) {
+                        if (inner.tagName === 'A')
+                            return false;
+                        if (inner.tagName === 'UL')
+                            hasInnerLinks |= !fullUnpublished(inner);
+                    }
+                return !hasInnerLinks;
+            };
+
+            function search() {
+                let value = document.getElementById('search-field').value.toLowerCase();
+                reRender();
+
+                if (value !== '') {
+                    for (el of document.getElementsByTagName('li')) {
+                        if (isTopic(el)) {
+                            if (!el.textContent.toLowerCase().includes(value))
+                                el.setAttribute('hidden', true);
+                            else
+                                el.removeAttribute('hidden');
+                        }
+                    }
+                    for (el of document.getElementsByTagName('li')) {
+                        if (!isTopic(el)) {
+                            if (containsVisibleTopic(el))
+                                el.removeAttribute('hidden');
+                            else
+                                el.setAttribute('hidden', true);
+                        }
+                    }
+                }
+            };
+
+            function isTopic(el) {
+                for (inner of el.children)
+                    if (inner.tagName === 'UL')
+                        return false;
+                return true;
+            };
+
+            function containsVisibleTopic(el) {
+                let hasVisibleTopic = false;
+                if (el.tagName === 'LI') {
+                    if (isTopic(el) && !el.hidden) return true;
+                    for (inner of el.children)
+                        if (inner.tagName === 'UL' )
+                            hasVisibleTopic |= containsVisibleTopic(inner);
+                } else {
+                    for (inner of el.children)
+                        hasVisibleTopic |= containsVisibleTopic(inner);
+                }
+
+                return hasVisibleTopic;
+            };
+
+            function reRender() {
+                for (id of ['all', 'published', 'not-published'])
+                    if (document.getElementById(id).checked)
+                        filterTopics(id);
             };
 
             window.onload = function updateTotalNumber() {
