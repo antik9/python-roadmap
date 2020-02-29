@@ -409,6 +409,7 @@
                 </ul>
             </li>
         </ul>
+
         <script>
             function filterTopics(option) {
                 switch(option) {
@@ -420,7 +421,7 @@
                         for (el of document.getElementsByTagName('li')) {
                             let toHide = true;
                             for (child of el.children) {
-                                if (child.tagName == "UL" || child.tagName == "A") {
+                                if (child.tagName === "UL" || child.tagName === "A") {
                                     toHide = false;
                                     break;
                                 }
@@ -430,17 +431,38 @@
                         break;
                     case "not-published":
                         for (el of document.getElementsByTagName('li')) {
-                            let toHide = true;
+                            let toHide = false;
                             for (child of el.children) {
-                                if (child.tagName == "A") {
-                                    toHide = false;
+                                if (child.tagName === "A") {
+                                    toHide = true;
+                                    break;
+                                }
+                                if (child.tagName === "UL" && fullPublished(child)) {
+                                    toHide = true;
                                     break;
                                 }
                             }
-                            toHide ? el.removeAttribute('hidden') : el.setAttribute('hidden', true);
+                            toHide ? el.setAttribute('hidden', true) : el.removeAttribute('hidden');
                         }
                         break;
                 }
+            };
+
+            function fullPublished(el) {
+                let isAllPublished = true;
+                let hasPublished = false;
+
+                for (li of el.children) {
+                    if (li.children.length === 0)
+                        isAllPublished = false;
+                    for (inner of li.children) {
+                        if (inner.tagName === "A")
+                            hasPublished = true;
+                        if (inner.tagName !== "A")
+                            isAllPublished = false;
+                    }
+                }
+                return hasPublished && isAllPublished;
             };
 
             window.onload = function updateTotalNumber() {
@@ -451,9 +473,9 @@
                     let isPublished = false;
                     let isRoot = false;
                     for (child of el.children) {
-                        if (child.tagName == "A")
+                        if (child.tagName === "A")
                             isPublished = true;
-                        if (child.tagName == "UL")
+                        if (child.tagName === "UL")
                             isRoot = true;
                     }
                     if (!isRoot) isPublished ? ++totalPublished : ++totalNotPublished;
