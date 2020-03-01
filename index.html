@@ -1,563 +1,418 @@
 <!-- roadmap.html -->
 <html>
-    <head>
-        <style>
-            body { padding: 20; font-family: Courier New !important; }
-            blockquote { padding: 0 1em; color: #6a737d; border-left: 0.25em solid #dfe2e5;}
-            code { padding: 0.2em 0.4em; background: rgba(27,31,35,0.05); border-radius: 3px;}
-            pre > code { background: none }
-            pre { padding: 16px; overflow: auto; line-height: 1.45; background-color: #f6f8fa; border-radius: 3px; }
-            table { border-collapse: collapse; }
-            td, th {  border: 1px solid #ddd; padding: 10px 13px; }
-            ul { padding: 12; }
-        </style>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta charset="UTF-8">
-        <title>Python Roadmap</title>
-    </head>
-    <body>
-        <h2>Python Roadmap</h2>
-        <table>
-            <tr><td>
-                <div>
-                    <input type="radio" id="all" name="topics-filter" value="all" checked onclick="filterTopics('all')">
-                    <label for="all" id="select-all">All</label>
-                </div>
+  <head>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Python Roadmap</title>
+  </head>
+  <body>
+    <h2>Python Roadmap</h2>
+    <table>
+      <tr>
+        <td>
+          <div>
+            <input type="radio" id="all" name="topics-filter" value="all" checked onclick="filterTopics('all')">
+            <label for="all" id="select-all">All</label>
+          </div>
 
-                <div>
-                    <input type="radio" id="published" name="topics-filter" value="published" onclick="filterTopics('published')">
-                    <label for="published" id="select-published">Published</label>
-                </div>
+          <div>
+            <input type="radio" id="published" name="topics-filter" value="published" onclick="filterTopics('published')">
+            <label for="published" id="select-published">Published</label>
+          </div>
 
-                <div>
-                    <input type="radio" id="not-published" name="topics-filter" value="not published" onclick="filterTopics('not-published')">
-                    <label for="not-published" id="select-not-published">Not published</label>
-                </div>
+          <div>
+            <input type="radio" id="not-published" name="topics-filter" value="not published" onclick="filterTopics('not-published')">
+            <label for="not-published" id="select-not-published">Not published</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Search: <input id="search-field" onkeyup="search()"/>
+        </td>
+      </tr>
+    </table>
 
-            </td></tr>
-            <tr><td>
-                Search: <input id="search-field" onkeyup="search()"/>
-            </td></tr>
-        </table>
-
+    <ul>
+      <li>Algorightms in Python
         <ul>
-            <li>Algorightms in Python
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/7316">Algorighms in Python</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/7562">Binary search</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/7472">Linear search</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/7570">Searching a substring</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/7713">Selection sort</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/7705">Merge sort</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/7792">Quick sort</a></li>
-                </ul>
-            </li>
-            <li>Async Python
-                <ul>
-                    <li>Asynchronous programming(prerequisite: difference between sync and async programming)</li>
-                    <li>async, await syntax, awaitable objects</li>
-                    <li>Coroutines with await/async</li>
-                    <li>asyncio.run, asyncio.create_task</li>
-                    <li>asyncio.gather, event loop</li>
-                    <li>aiohttp library</li>
-                </ul>
-            </li>
-            <li>Builtins
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/7452">Sep and end arguments of print</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/7800">Any and all</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/8006">Flush and file arguments of print https</a></li>
-                    <li>dir() and help()</li>
-                </ul>
-            </li>
-            <li>Control Flow
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/5953">If statement</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/5932">Else statement</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/5926">Elif statement</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/5940">While loop</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6065">For loop</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6302">Loop control statements</a></li>
-                    <li>Ternary operators</li>
-                </ul>
-            </li>
-            <li>Code Style
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/5879">PEP8</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6081">Comments</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6440">Avoiding bad comments</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/5885">Naming variables</a></li>
-                    <li>Linters and helpers: flake8, pylint, autopep8</li>
-                </ul>
-            </li>
-            <li>Collections
-                <ul>
-                    <li>Lists
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/5979">List</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6031">Operations with list</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6189">Indexes</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6177">Slicing</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6315">List comprehension</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6938">Nested lists</a></li>
-                        </ul>
-                    </li>
-                    <li>Dictionaries
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/6481">Dictionary</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7989">collections.defaultdict, dict.setdefault(), collections.Counter</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7823">Hashable</a></li>
-                        </ul>
-                    </li>
-                    <li>Sets
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/6643">Set</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8991">Set operations: intersection, union, difference</a></li>
-                        </ul>
-                    </li>
-                    <li>Tuples
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/7462">Tuple and collections.namedtuple</a></li>
-                        </ul>
-                    </li>
-                    <li>Algorithms and usage
-                        <ul>
-                            <li>Assignments and references. Conversion to boolean.</li>
-                            <li>Sorting: list.sort(key=...), sorted, reversed, min, max</li>
-                            <li>Copy of an object, shallow copy, copy.deepcopy</li>
-                            <li>list and tuple unpacking to variables</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Dates and time
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/7324">datetime.datetime (prerequisite UNIX time)</a></li>
-                    <li>datetime parsing and formatting (prerequisite c-style formatting control??)</li>
-                    <li>datetime operations, datetime.timedelta, timezones, pytz module</li>
-                    <li>time module, measuring time, time.sleep, time.clock, time.time</li>
-                </ul>
-            </li>
-            <li>Data Types and Operations
-                <ul>
-                    <li>Primitive types and operations with them
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/5852">Basic data types</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/5865">Integer arithmetic</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6025">Boolean logic</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7130">Escape sequences</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8077">Identity testing</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8804">None type, infinity(special values)</a></li>
-                        </ul>
-                    </li>
-                    <li>Using primitives
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/5920">Comparisons</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/5859">Variables</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6224">Type casting</a></li>
-                            <li>Walrus assignment(since Python 3.8)</li>
-                        </ul>
-                    </li>
-                    <li>Strings and bytes
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/5814">Quotes and multi-line strings</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6037">String formatting</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6842">Basic string methods</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6972">Split and join</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8069">Strings and bytes, str.encode(), bytes.decode()</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8061">Bytes basics</a></li>
-                        </ul>
-                    </li>
-                    <li>Data structures
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/8915">Stack in Python</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8925">Queue in Python</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Django
-                <ul>
-                    <li>Static sites
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/6277">Introduction to Django</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6285">Django MVC</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6651">Launching web server</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6391">Django template language</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6472">Processing requests</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8754">Rendering templates</a></li>
-                        </ul>
-                    </li>
-                    <li>ORM
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/6832">Django ORM</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7005">Queries and filters</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7036">Field Lookups</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7101">C(R)UD operations, transactions</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7224">Aggregations and Ordering</a></li>
-                        </ul>
-                    </li>
-                    <li>Dynamic content:
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/7752">Registration and authentication</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7637">Using models in templates</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7332">POST handlers</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7647">Django Forms</a></li>
-                            <li>GenericView, ListView and other classes from django.views</li>
-                        </ul>
-                    </li>
-                    <li>REST API:
-                        <ul>
-                            <li>Django Rest Framework</li>
-                            <li>Serializers</li>
-                            <li>View classes from rest_framework.generic</li>
-                        </ul>
-                    </li>
-                    <li>Utilities:
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/7869">Admin interface</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Files and filesystem
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/8691">Files in Python</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/8139">File mode, reading, closing file, read, readline...</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/8334">Writing and appending to file, with open..</a>.</li>
-                    <li>Seek, tell, write...</li>
-                    <li>High level module: pathlib.Path module, Path.read_*, Path.write_*, Path.is_*, Path.unlink</li>
-                    <li>Low level modules: os.path.*, os.chdir, os.mkdir, shutil.rmtree, shutil.copytree</li>
-                </ul>
-            </li>
-            <li>Functions
-                <ul>
-                    <li>Basic knowledge
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/5891">Invoking a function</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/5900">Declaring a function</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6322">Scopes</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7665">Recursion</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7248">Positional and named arguments</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8560">*args, **kwargs</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7092">Lambda functions</a></li>
-                        </ul>
-                    </li>
-                    <li>Decorators
-                        <ul>
-                            <li>Decorator usage, syntax of decorator function</li>
-                            <li>functools.wraps, functools.update_wrapper</li>
-                            <li>Partial functions, functools.partial</li>
-                            <li><a href="https://hyperskill.org/learn/step/8702">Intro to Context managers</a></li>
-                            <li>Custom context managers contextlib.contextmanager</li>
-                        </ul>
-                    </li>
-                    <li>Generators
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/8122">Built-in generators: range, map, filter, zip</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8479">Iterators</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/8269">Custom generator, closures, yield statement</a></li>
-                            <li>Coroutines and yield from statement</li>
-                            <li><a href="https://hyperskill.org/learn/step/8487">itertools.chain, itertools.product, itertools.islice, itertools.combinations</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Introduction
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/5204">Introduction to Python</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/5208">The first program</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/5233">Multi-line programs</a></li>
-                </ul>
-            </li>
-            <li>Logging
-                <ul>
-                    <li>Logger class and log levels(prerequisites: Why're we logging at all?)</li>
-                    <li>Formatters</li>
-                    <li>Handlers</li>
-                </ul>
-            </li>
-            <li>Math
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/6256">Math functions</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6263">Random</a></li>
-                    <li>Numpy - advanced and optimized math</li>
-                </ul>
-            </li>
-            <li>Modules and Packages
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/6019">Load module</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6057">Create module</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6384">Packages</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6230">Pip</a></li>
-                    <li>Virtual environments</li>
-                </ul>
-            </li>
-            <li>Multithreading and multiprocessing(prerequisite: difference between them)
-                <ul>
-                    <li>Daemon processes vs synchronous calls</li>
-                    <li>Running task in thread/process: start, run, join, terminate</li>
-                    <li>GIL</li>
-                    <li>Synchronization primitives: Lock, RLock</li>
-                    <li>Shareable resources: Queue, wait/nowait calls</li>
-                    <li>Processes pool, multiprocessing.map</li>
-                </ul>
-            </li>
-            <li>OOP
-                <ul>
-                    <li>Introduction to OOP:
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/6661">Class</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6669">Class instances</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6677">Class vs instance</a></li>
-                        </ul>
-                    </li>
-                    <li>Classes and their methods and attributes
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/6931">Methods</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/6981">Methods and attributes</a></li>
-                            <li>staticmethod, classmethod, property decorators</li>
-                            <li><a href="https://hyperskill.org/learn/step/7629">Overloading, MRO and super()</a></li>
-                            <li>getattr, setattr, hasattr built-in functions</li>
-                        </ul>
-                    </li>
-                    <li>Inheritance, Encapsulation, Polymorphism
-                        <ul>
-                            <li><a href="https://hyperskill.org/learn/step/7235">Inheritance and MRO</a></li>
-                            <li>Encapsulation: public, not public, private methods</li>
-                            <li><a href="https://hyperskill.org/learn/step/7139">Polymorphism and magic methods</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7444">Math magic methods</a></li>
-                            <li><a href="https://hyperskill.org/learn/step/7657">Multiple inheritance</a></li>
-                            <li>__slots__, __dict__, __new__, __prepare__</li>
-                            <li>Dataclasses</li>
-                            <li>Abstract classes and methods(Low priority)</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Python shell
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/8133">Introduction to Python shell</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/8238">Experiments with Python shell</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/8244">Debugging in shell</a></li>
-                </ul>
-            </li>
-            <li>Regex
-                <ul>
-                    <li>Regular expession syntax: letters, numbers, spaces, (.?+|) symbols</li>
-                    <li>Regular expression syntax: beginning of the line, end of the line, number of repeations, paricular symbols with []</li>
-                    <li>Matching and searching</li>
-                    <li>Grouping, named groups</li>
-                    <li>Back-searching and forward-searching</li>
-                    <li>Regex configuration, ignorecase, multiline, greedy vs non-greedy</li>
-                </ul>
-            </li>
-            <li>Simple Programms
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/5913">Taking input</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/5872">Program with numbers</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6047">Program execution</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6052">Errors</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6042">Exceptions</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/6270">Exception handling</a></li>
-                    <li>Built-in exceptions: TypeError, ValueError, IOError, KeyError...</li>
-                    <li><a href="https://hyperskill.org/learn/step/7981">Command line arguments</a></li>
-                    <li>PYTHONHOME, PYTHONPATH</li>
-                </ul>
-            </li>
-            <li>Testing
-                <ul>
-                    <li>assert statement</li>
-                    <li>unittest module, unittest,TestCase, setUp(), tearDown(), simple test (prerequisite: Why're we testing at all?)</li>
-                    <li>TestCase,assertTrue, assertFalse, assertEqual...</li>
-                    <li>pytest module
-                        <ul>
-                            <li>Simple test with pytest</li>
-                            <li>Markers and skipping</li>
-                            <li>Fixtures</li>
-                        </ul>
-                    </li>
-                    <li>Mocking</li>
-                    <li>Coverage</li>
-                </ul>
-            </li>
-            <li>Typing
-                <ul>
-                    <li>type() function and introduction to annotations</li>
-                    <li>typing module, typing.Optional, typing.Any</li>
-                    <li>typing module, typing.List, typing.Dict, typing.Tuple</li>
-                    <li>typing module, typing.Sequence, typing.Callable, typing.Type</li>
-                    <li>mypy and static analysis of code</li>
-                </ul>
-            </li>
-            <li>Web
-                <ul>
-                    <li><a href="https://hyperskill.org/learn/step/8670">Sockets</a></li>
-                    <li>Open links with urllib.request.urlopen</li>
-                    <li><a href="https://hyperskill.org/learn/step/8603">requests library, requests.get, query parameters</a></li>
-                    <li><a href="https://hyperskill.org/learn/step/8334">requests library, requests.post, body of request</a></li>
-                    <li>JSON and json library, json.load(s), json.dump(s)</li>
-                    <li>xml, lxml libraries, xml.etree</li>
-                </ul>
-            </li>
-            <li>Advanced Python
-                <ul>
-                    <li>CLI, argparse and optparse modules, environment variables</li>
-                    <li>Compilation and linking</li>
-                    <li>Compression and archiving</li>
-                    <li>CSV, readxl, writexl</li>
-                    <li>Enums</li>
-                    <li>Frames and call stack</li>
-                    <li>Garbage collector</li>
-                    <li>Pickle, shelve, python-specific data exchange</li>
-                    <li>Python and Databases, SQLAlchemy</li>
-                    <li>Temporary files and directories</li>
-                    <li>Tkinter, UI programming</li>
-                    <li>Using python with comfort: ipython, bpython tools</li>
-                    <li>Web scraping: scrapy, beautifulsoup</li>
-                </ul>
-            </li>
+          <li><a href="https://hyperskill.org/learn/step/7316">Algorighms in Python</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7562">Binary search</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7472">Linear search</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7570">Searching a substring</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7713">Selection sort</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7705">Merge sort</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7792">Quick sort</a></li>
         </ul>
+      </li>
+      <li>Async Python
+        <ul>
+          <li>Asynchronous programming(prerequisite: difference between sync and async programming)</li>
+          <li>async, await syntax, awaitable objects</li>
+          <li>Coroutines with await/async</li>
+          <li>asyncio.run, asyncio.create_task</li>
+          <li>asyncio.gather, event loop</li>
+          <li>aiohttp library</li>
+        </ul>
+      </li>
+      <li>Builtins
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/7452">Sep and end arguments of print</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7800">Any and all</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8006">Flush and file arguments of print https</a></li>
+          <li>dir() and help()</li>
+        </ul>
+      </li>
+      <li>Control Flow
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/5953">If statement</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5932">Else statement</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5926">Elif statement</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5940">While loop</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6065">For loop</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6302">Loop control statements</a></li>
+          <li>Ternary operators</li>
+        </ul>
+      </li>
+      <li>Code Style
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/5879">PEP8</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6081">Comments</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6440">Avoiding bad comments</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5885">Naming variables</a></li>
+          <li>Linters and helpers: flake8, pylint, autopep8</li>
+        </ul>
+      </li>
+      <li>Collections
+        <ul>
+          <li>Lists
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/5979">List</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6031">Operations with list</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6189">Indexes</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6177">Slicing</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6315">List comprehension</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6938">Nested lists</a></li>
+            </ul>
+          </li>
+          <li>Dictionaries
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/6481">Dictionary</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7989">collections.defaultdict, dict.setdefault(), collections.Counter</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7823">Hashable</a></li>
+            </ul>
+          </li>
+          <li>Sets
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/6643">Set</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8991">Set operations: intersection, union, difference</a></li>
+            </ul>
+          </li>
+          <li>Tuples
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/7462">Tuple and collections.namedtuple</a></li>
+            </ul>
+          </li>
+          <li>Algorithms and usage
+            <ul>
+              <li>Assignments and references. Conversion to boolean.</li>
+              <li>Sorting: list.sort(key=...), sorted, reversed, min, max</li>
+              <li>Copy of an object, shallow copy, copy.deepcopy</li>
+              <li>list and tuple unpacking to variables</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Dates and time
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/7324">datetime.datetime (prerequisite UNIX time)</a></li>
+          <li>datetime parsing and formatting (prerequisite c-style formatting control??)</li>
+          <li>datetime operations, datetime.timedelta, timezones, pytz module</li>
+          <li>time module, measuring time, time.sleep, time.clock, time.time</li>
+        </ul>
+      </li>
+      <li>Data Types and Operations
+        <ul>
+          <li>Primitive types and operations with them
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/5852">Basic data types</a></li>
+              <li><a href="https://hyperskill.org/learn/step/5865">Integer arithmetic</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6025">Boolean logic</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7130">Escape sequences</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8077">Identity testing</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8804">None type, infinity(special values)</a></li>
+            </ul>
+          </li>
+          <li>Using primitives
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/5920">Comparisons</a></li>
+              <li><a href="https://hyperskill.org/learn/step/5859">Variables</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6224">Type casting</a></li>
+              <li>Walrus assignment(since Python 3.8)</li>
+            </ul>
+          </li>
+          <li>Strings and bytes
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/5814">Quotes and multi-line strings</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6037">String formatting</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6842">Basic string methods</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6972">Split and join</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8069">Strings and bytes, str.encode(), bytes.decode()</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8061">Bytes basics</a></li>
+            </ul>
+          </li>
+          <li>Data structures
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/8915">Stack in Python</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8925">Queue in Python</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Django
+        <ul>
+          <li>Static sites
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/6277">Introduction to Django</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6285">Django MVC</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6651">Launching web server</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6391">Django template language</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6472">Processing requests</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8754">Rendering templates</a></li>
+            </ul>
+          </li>
+          <li>ORM
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/6832">Django ORM</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7005">Queries and filters</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7036">Field Lookups</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7101">C(R)UD operations, transactions</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7224">Aggregations and Ordering</a></li>
+            </ul>
+          </li>
+          <li>Dynamic content:
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/7752">Registration and authentication</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7637">Using models in templates</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7332">POST handlers</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7647">Django Forms</a></li>
+              <li>GenericView, ListView and other classes from django.views</li>
+            </ul>
+          </li>
+          <li>REST API:
+            <ul>
+              <li>Django Rest Framework</li>
+              <li>Serializers</li>
+              <li>View classes from rest_framework.generic</li>
+            </ul>
+          </li>
+          <li>Utilities:
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/7869">Admin interface</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Files and filesystem
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/8691">Files in Python</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8139">File mode, reading, closing file, read, readline...</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8334">Writing and appending to file, with open..</a>.</li>
+          <li>Seek, tell, write...</li>
+          <li>High level module: pathlib.Path module, Path.read_*, Path.write_*, Path.is_*, Path.unlink</li>
+          <li>Low level modules: os.path.*, os.chdir, os.mkdir, shutil.rmtree, shutil.copytree</li>
+        </ul>
+      </li>
+      <li>Functions
+        <ul>
+          <li>Basic knowledge
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/5891">Invoking a function</a></li>
+              <li><a href="https://hyperskill.org/learn/step/5900">Declaring a function</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6322">Scopes</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7665">Recursion</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7248">Positional and named arguments</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8560">*args, **kwargs</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7092">Lambda functions</a></li>
+            </ul>
+          </li>
+          <li>Decorators
+            <ul>
+              <li>Decorator usage, syntax of decorator function</li>
+              <li>functools.wraps, functools.update_wrapper</li>
+              <li>Partial functions, functools.partial</li>
+              <li><a href="https://hyperskill.org/learn/step/8702">Intro to Context managers</a></li>
+              <li>Custom context managers contextlib.contextmanager</li>
+            </ul>
+          </li>
+          <li>Generators
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/8122">Built-in generators: range, map, filter, zip</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8479">Iterators</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8269">Custom generator, closures, yield statement</a></li>
+              <li>Coroutines and yield from statement</li>
+              <li><a href="https://hyperskill.org/learn/step/8487">itertools.chain, itertools.product, itertools.islice, itertools.combinations</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Introduction
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/5204">Introduction to Python</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5208">The first program</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5233">Multi-line programs</a></li>
+        </ul>
+      </li>
+      <li>Logging
+        <ul>
+          <li>Logger class and log levels(prerequisites: Why're we logging at all?)</li>
+          <li>Formatters</li>
+          <li>Handlers</li>
+        </ul>
+      </li>
+      <li>Math
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/6256">Math functions</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6263">Random</a></li>
+          <li>Numpy - advanced and optimized math</li>
+        </ul>
+      </li>
+      <li>Modules and Packages
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/6019">Load module</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6057">Create module</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6384">Packages</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6230">Pip</a></li>
+          <li>Virtual environments</li>
+        </ul>
+      </li>
+      <li>Multithreading and multiprocessing(prerequisite: difference between them)
+        <ul>
+          <li>Daemon processes vs synchronous calls</li>
+          <li>Running task in thread/process: start, run, join, terminate</li>
+          <li>GIL</li>
+          <li>Synchronization primitives: Lock, RLock</li>
+          <li>Shareable resources: Queue, wait/nowait calls</li>
+          <li>Processes pool, multiprocessing.map</li>
+        </ul>
+      </li>
+      <li>OOP
+        <ul>
+          <li>Introduction to OOP:
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/6661">Class</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6669">Class instances</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6677">Class vs instance</a></li>
+            </ul>
+          </li>
+          <li>Classes and their methods and attributes
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/6931">Methods</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6981">Methods and attributes</a></li>
+              <li>staticmethod, classmethod, property decorators</li>
+              <li><a href="https://hyperskill.org/learn/step/7629">Overloading, MRO and super()</a></li>
+              <li>getattr, setattr, hasattr built-in functions</li>
+            </ul>
+          </li>
+          <li>Inheritance, Encapsulation, Polymorphism
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/7235">Inheritance and MRO</a></li>
+              <li>Encapsulation: public, not public, private methods</li>
+              <li><a href="https://hyperskill.org/learn/step/7139">Polymorphism and magic methods</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7444">Math magic methods</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7657">Multiple inheritance</a></li>
+              <li>__slots__, __dict__, __new__, __prepare__</li>
+              <li>Dataclasses</li>
+              <li>Abstract classes and methods(Low priority)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Python shell
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/8133">Introduction to Python shell</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8238">Experiments with Python shell</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8244">Debugging in shell</a></li>
+        </ul>
+      </li>
+      <li>Regex
+        <ul>
+          <li>Regular expession syntax: letters, numbers, spaces, (.?+|) symbols</li>
+          <li>Regular expression syntax: beginning of the line, end of the line, number of repeations, paricular symbols with []</li>
+          <li>Matching and searching</li>
+          <li>Grouping, named groups</li>
+          <li>Back-searching and forward-searching</li>
+          <li>Regex configuration, ignorecase, multiline, greedy vs non-greedy</li>
+        </ul>
+      </li>
+      <li>Simple Programms
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/5913">Taking input</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5872">Program with numbers</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6047">Program execution</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6052">Errors</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6042">Exceptions</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6270">Exception handling</a></li>
+          <li>Built-in exceptions: TypeError, ValueError, IOError, KeyError...</li>
+          <li><a href="https://hyperskill.org/learn/step/7981">Command line arguments</a></li>
+          <li>PYTHONHOME, PYTHONPATH</li>
+        </ul>
+      </li>
+      <li>Testing
+        <ul>
+          <li>assert statement</li>
+          <li>unittest module, unittest,TestCase, setUp(), tearDown(), simple test (prerequisite: Why're we testing at all?)</li>
+          <li>TestCase,assertTrue, assertFalse, assertEqual...</li>
+          <li>pytest module
+            <ul>
+              <li>Simple test with pytest</li>
+              <li>Markers and skipping</li>
+              <li>Fixtures</li>
+            </ul>
+          </li>
+          <li>Mocking</li>
+          <li>Coverage</li>
+        </ul>
+      </li>
+      <li>Typing
+        <ul>
+          <li>type() function and introduction to annotations</li>
+          <li>typing module, typing.Optional, typing.Any</li>
+          <li>typing module, typing.List, typing.Dict, typing.Tuple</li>
+          <li>typing module, typing.Sequence, typing.Callable, typing.Type</li>
+          <li>mypy and static analysis of code</li>
+        </ul>
+      </li>
+      <li>Web
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/8670">Sockets</a></li>
+          <li>Open links with urllib.request.urlopen</li>
+          <li><a href="https://hyperskill.org/learn/step/8603">requests library, requests.get, query parameters</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8334">requests library, requests.post, body of request</a></li>
+          <li>JSON and json library, json.load(s), json.dump(s)</li>
+          <li>xml, lxml libraries, xml.etree</li>
+        </ul>
+      </li>
+      <li>Advanced Python
+        <ul>
+          <li>CLI, argparse and optparse modules, environment variables</li>
+          <li>Compilation and linking</li>
+          <li>Compression and archiving</li>
+          <li>CSV, readxl, writexl</li>
+          <li>Enums</li>
+          <li>Frames and call stack</li>
+          <li>Garbage collector</li>
+          <li>Pickle, shelve, python-specific data exchange</li>
+          <li>Python and Databases, SQLAlchemy</li>
+          <li>Temporary files and directories</li>
+          <li>Tkinter, UI programming</li>
+          <li>Using python with comfort: ipython, bpython tools</li>
+          <li>Web scraping: scrapy, beautifulsoup</li>
+        </ul>
+      </li>
+    </ul>
 
-        <script>
-            function filterTopics(option) {
-                switch(option) {
-                    case "all":
-                        for (el of document.getElementsByTagName('li'))
-                            el.removeAttribute('hidden', false);
-                        break;
-                    case "published":
-                        for (el of document.getElementsByTagName('li')) {
-                            let toHide = true;
-                            for (child of el.children) {
-                                if ((child.tagName === "UL" && !fullUnpublished(child)) || child.tagName === "A") {
-                                    toHide = false;
-                                    break;
-                                }
-                            }
-                            toHide ? el.setAttribute('hidden', true) : el.removeAttribute('hidden');
-                        }
-                        break;
-                    case "not-published":
-                        for (el of document.getElementsByTagName('li')) {
-                            let toHide = false;
-                            for (child of el.children) {
-                                if (child.tagName === "A") {
-                                    toHide = true;
-                                    break;
-                                }
-                                if (child.tagName === "UL" && fullPublished(child)) {
-                                    toHide = true;
-                                    break;
-                                }
-                            }
-                            toHide ? el.setAttribute('hidden', true) : el.removeAttribute('hidden');
-                        }
-                        break;
-                }
-            };
-
-            function fullPublished(el) {
-                let isAllPublished = true;
-                let hasPublished = false;
-
-                for (li of el.children) {
-                    if (li.children.length === 0)
-                        isAllPublished = false;
-                    for (inner of li.children) {
-                        if (inner.tagName === "A")
-                            hasPublished = true;
-                        if (inner.tagName !== "A")
-                            isAllPublished = false;
-                    }
-                }
-                return hasPublished && isAllPublished;
-            };
-
-            function fullUnpublished(el) {
-                let hasInnerLinks = false;
-                for (child of el.children)
-                    for (inner of child.children) {
-                        if (inner.tagName === 'A')
-                            return false;
-                        if (inner.tagName === 'UL')
-                            hasInnerLinks |= !fullUnpublished(inner);
-                    }
-                return !hasInnerLinks;
-            };
-
-            function search() {
-                let value = document.getElementById('search-field').value.toLowerCase();
-                reRender();
-
-                if (value !== '') {
-                    for (el of document.getElementsByTagName('li')) {
-                        if (isTopic(el)) {
-                            if (!el.textContent.toLowerCase().includes(value))
-                                el.setAttribute('hidden', true);
-                            else
-                                el.removeAttribute('hidden');
-                        }
-                    }
-                    for (el of document.getElementsByTagName('li')) {
-                        if (!isTopic(el)) {
-                            if (containsVisibleTopic(el))
-                                el.removeAttribute('hidden');
-                            else
-                                el.setAttribute('hidden', true);
-                        }
-                    }
-                }
-            };
-
-            function isTopic(el) {
-                for (inner of el.children)
-                    if (inner.tagName === 'UL')
-                        return false;
-                return true;
-            };
-
-            function containsVisibleTopic(el) {
-                let hasVisibleTopic = false;
-                if (el.tagName === 'LI') {
-                    if (isTopic(el) && !el.hidden) return true;
-                    for (inner of el.children)
-                        if (inner.tagName === 'UL' )
-                            hasVisibleTopic |= containsVisibleTopic(inner);
-                } else {
-                    for (inner of el.children)
-                        hasVisibleTopic |= containsVisibleTopic(inner);
-                }
-
-                return hasVisibleTopic;
-            };
-
-            function reRender() {
-                for (id of ['all', 'published', 'not-published'])
-                    if (document.getElementById(id).checked)
-                        filterTopics(id);
-            };
-
-            window.onload = function updateTotalNumber() {
-                let totalPublished = 0;
-                let totalNotPublished = 0;
-
-                for (el of document.getElementsByTagName('li')) {
-                    let isPublished = false;
-                    let isRoot = false;
-                    for (child of el.children) {
-                        if (child.tagName === "A")
-                            isPublished = true;
-                        if (child.tagName === "UL")
-                            isRoot = true;
-                    }
-                    if (!isRoot) isPublished ? ++totalPublished : ++totalNotPublished;
-                }
-
-                document.getElementById('select-all').textContent = `All (${totalPublished + totalNotPublished})`;
-                document.getElementById('select-published').textContent = `Published (${totalPublished})`;
-                document.getElementById('select-not-published').textContent = `Not Published (${totalNotPublished})`;
-            };
-        </script>
-    </body>
+    <script src="render.js"></script>
+  </body>
 </html>
