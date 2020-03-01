@@ -1,0 +1,257 @@
+<!-- roadmap.html -->
+<html>
+  <head>
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Essentials Roadmap</title>
+  </head>
+  <body>
+    <h3><a href="index.html">⬅ BACK</a></h3>
+    <h2>Essentials Roadmap</h2>
+    <table>
+      <tr>
+        <td>
+          <div>
+            <input type="radio" id="all" name="topics-filter" value="all" checked onclick="filterTopics('all')">
+            <label for="all" id="select-all">All</label>
+          </div>
+
+          <div>
+            <input type="radio" id="published" name="topics-filter" value="published" onclick="filterTopics('published')">
+            <label for="published" id="select-published">Published</label>
+          </div>
+
+          <div>
+            <input type="radio" id="not-published" name="topics-filter" value="not published" onclick="filterTopics('not-published')">
+            <label for="not-published" id="select-not-published">Not published</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Search: <input id="search-field" onkeyup="search()"/>
+        </td>
+      </tr>
+    </table>
+
+    <ul>
+      <li>Command line
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/8977">Command line overview</a></li>
+          <li>Command parameters</li>
+          <li><a href="https://hyperskill.org/learn/step/6763">Working with files</a></li>
+        </ul>
+      </li>
+      <li>Data formats
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/6854">JSON</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6901">XML</a></li>
+        </ul>
+      </li>
+      <li>Databases
+        <ul>
+          <li>Database consistency
+            <ul>
+              <li>Consistency types</li>
+              <li>ACID</li>
+              <li>Transactions</li>
+              <li>CAP theorem</li>
+              <li>Locks</li>
+            </ul>
+          </li>
+          <li>Database types
+            <ul>
+              <li>Relational databases</li>
+              <li>NoSQL</li>
+              <li>Key-value stores</li>
+              <li>Document-oriented databases</li>
+            </ul>
+          </li>
+          <li><a href="https://hyperskill.org/learn/step/8497">Introduction to databases</a></li>
+        </ul>
+      </li>
+      <li>Encoding standards
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/7899">Unicode</a></li>
+        </ul>
+      </li>
+      <li>Functional programming
+        <ul>
+          <li>Pure functions</li>
+          <li>Functions as first-class citizens</li>
+          <li>High-order functions</li>
+          <li>Lazy evaluation</li>
+        </ul>
+      </li>
+      <li>Hashing
+        <ul>
+          <li>Introduction to hashing</li>
+          <li>Hash collisions</li>
+          <li>Hash tables</li>
+        </ul>
+      </li>
+      <li>Intro to programming
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/8739">Computer programming</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8742">Intro to computational thinking</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8745">Components of computational thinking</a></li>
+          <li>Software</li>
+          <li>For, while cycles</li>
+          <li>Program execution, concecutive intructions</li>
+        </ul>
+      </li>
+      <li>Math
+        <ul>
+          <li>Functions
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/8857">Basics of functions</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8865">Properties of functions</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8875">Numerical functions</a></li>
+            </ul>
+          </li>
+          <li>Linear algebra
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/7712">Introduction to matrices</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7285">Type of matrices</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7296">Operation with matrices</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7306">Sample space</a></li>
+              <li><a href="https://hyperskill.org/learn/step/7372">Matrix multiplication</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8039">Row operations</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8050">Row echelon form</a></li>
+            </ul>
+          </li>
+          <li>Probability theory
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/7892">Events</a></li>
+            </ul>
+          </li>
+          <li>Sets theory
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/8220">Basics of sets</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8643">Set operations and Venn Diagrams</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8653">Cartesian Product</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Media formats
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/8819">RGB</a></li>
+        </ul>
+      </li>
+      <li>Multithreading and concurrency
+        <ul>
+          <li>Sync and async</li>
+          <li>Threading and multiprocessing</li>
+          <li>Concureency vs Parallelism</li>
+          <li>Mutlitasking and timeslicing</li>
+        </ul>
+      </li>
+      <li>Numerical systems
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/5544">Binary numbers</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5630">Binary arithmetic</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5622">Converting from binary to decimal</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5614">Converting from decimal to binary</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5745">1s Complement</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5753">2s Complement</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8788">Hexadecimal numbers</a></li>
+        </ul>
+      </li>
+      <li>Object-Oriented Programming
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/6314">Introduction to OOP</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8519">Encapsulation</a></li>
+          <li>Inheritance</li>
+          <li>Polymorphism</li>
+        </ul>
+      </li>
+      <li>Regular Expressions
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/7580">Regexps basics</a></li>
+        </ul>
+      </li>
+      <li>Software design and architecture
+        <ul>
+          <li>Design patterns
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/3611">The concept of patterns</a></li>
+            </ul>
+          </li>
+          <li>Desing principles
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/8956">Design principles</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8963">Single Responsibility Principle (SRP)</a></li>
+              <li>Open/Closed Principle (OCP)</li>
+              <li>Liskov Substitution Principle (LSP)</li>
+              <li>Interface Segregation Principle (ISP)</li>
+              <li>Dependency Inversion Principle (DIP)</li>
+              <li>Low coupling/tight cohesion</li>
+            </ul>
+          </li>
+          <li>Utilities
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/8504">Libraries</a></li>
+              <li><a href="https://hyperskill.org/learn/step/6701">Frameworks</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8262">Data and object mapping</a></li>
+              <li><a href="https://hyperskill.org/learn/step/8312">Object-Relational Mapping (ORM)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://hyperskill.org/learn/step/7929">Immutability</a></li>
+          <li>MVC</li>
+        </ul>
+      </li>
+      <li>Software quality
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/5504">Bugs and debugging</a></li>
+          <li><a href="https://hyperskill.org/learn/step/5538">Introduction to logging</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7545">Unit testing</a></li>
+        </ul>
+      </li>
+      <li>SQL
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/7053">What is SQL</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7123">Basic data types</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7400">Literals</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7409">Expressions</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7392">Basic SELECT statement</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7907">The NULL value</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8611">SELECT FROM statement</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8619">SELECT FROM WHERE statement</a></li>
+          <li><a href="https://hyperskill.org/learn/step/8627">Results ordering</a></li>
+        </ul>
+      </li>
+      <li>Typing
+        <ul>
+          <li>Static vs dynamic</li>
+          <li>Strong vs weak</li>
+          <li>Hybrids</li>
+        </ul>
+      </li>
+      <li>Unsorted
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/6216">External resources</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6216">Units of information</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6216">Files</a></li>
+          <li>Bits</li>
+          <li>Bytes</li>
+          <li>Ordering</li>
+        </ul>
+      </li>
+      <li>Web technologies
+        <ul>
+          <li><a href="https://hyperskill.org/learn/step/6633">World Wide Web (WWW)</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6569">HTTP protocol</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6740">HTTP URL</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6752">HTTP messages</a></li>
+          <li><a href="https://hyperskill.org/learn/step/6911">Domains</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7778">HTTP Basic Auth</a></li>
+          <li><a href="https://hyperskill.org/learn/step/7834">REST</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <script src="assets/js/render.js"></script>
+  </body>
+</html>
