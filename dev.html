@@ -1,0 +1,178 @@
+<!-- roadmap.html -->
+<html>
+  <head>
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Junior Python Developer Roadmap</title>
+  </head>
+  <body>
+    <h3><a href="index.html">⬅ BACK</a></h3>
+    <h2>Junior Python Developer Roadmap</h2>
+    <table>
+      <tr>
+        <td>
+          <div>
+            <input type="radio" id="all" name="topics-filter" value="all" checked onclick="filterTopics('all')">
+            <label for="all" id="select-all">All</label>
+          </div>
+
+          <div>
+            <input type="radio" id="published" name="topics-filter" value="published" onclick="filterTopics('published')">
+            <label for="published" id="select-published">Published</label>
+          </div>
+
+          <div>
+            <input type="radio" id="not-published" name="topics-filter" value="not published" onclick="filterTopics('not-published')">
+            <label for="not-published" id="select-not-published">Not published</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Search: <input id="search-field" onkeyup="search()"/>
+        </td>
+      </tr>
+    </table>
+
+    <ul>
+      <li>Databases
+        <ul>
+          <li>SQLite</li>
+          <li>MySQL</li>
+          <li>Postgres</li>
+          <li>Oracle, MsSQL (Optional)</li>
+          <li>MongoDB</li>
+          <li>Key-value storages (Redis, MemCache)</li>
+          <li>Message brokers (Optional)</li>
+        </ul>
+      </li>
+
+      <li>Bash
+        <li>Working with files
+          <ul>
+            <li>Reading files (stdin), less, more, cat</li>
+            <li>Writing to files (stdout, stderr)</li>
+            <li>Pipes</li>
+            <li>Creating, removing files</li>
+          </ul>
+        </li>
+        <li>Package managers
+          <ul>
+            <li>Ubuntu/Debian and apt</li>
+            <li>Centos/Fedora and yum/dnf</li>
+            <li>Other package managers</li>
+          </ul>
+        </li>
+        <li>Networking
+          <ul>
+            <li>wget and curl, getting HTML pages</li>
+            <li>ping and icmp protocol, traceroute(optional)</li>
+            <li>telnet (optional)</li>
+          </ul>
+        </li>
+        <li>Common utilities
+          <ul>
+            <li>wc, sort, uniq</li>
+            <li>ls, pwd, mv</li>
+            <li>Archivers tar, zip, gzip...</li>
+            <li>grep, pgrep</li>
+            <li>cron, cronjobs</li>
+          </ul>
+        </li>
+        <li>Working with processes
+          <ul>
+            <li>kill, pkill and signals</li>
+            <li>linux daemons</li>
+            <li>ps and /proc pseudo file system</li>
+            <li>top, htop, uptime and monitoring</li>
+          </ul>
+        </li>
+        <li>Help and manuals
+          <ul>
+            <li>Man</li>
+            <li>apropos, whatis</li>
+            <li>cheatsheets, tldr...</li>
+          </ul>
+        </li>
+        <li>Docker
+          <ul>
+            <li>Containers and docker</li>
+            <li>Dockerfile</li>
+            <li>Docker run</li>
+            <li>Docker build</li>
+          </ul>
+        </li>
+      </li>
+
+      <li>Deploy your application
+        <ul>
+          <li>Heroku service</li>
+          <li>Deploy Python/Django application on Heroku</li>
+        </ul>
+      </li>
+
+      <li>Git anc VCS
+        <ul>
+        <ul>
+          <li>Git
+            <ul>
+              <li><a href="https://hyperskill.org/learn/step/10894">Starting with git</a></li>
+              <li><a href="https://hyperskill.org/learn/step/10901">Local repository</a></li>
+              <li><a href="https://hyperskill.org/learn/step/10910">Editing commit</a></li>
+              <li><a href="https://hyperskill.org/learn/step/11189">Git branches</a></li>
+              <li>Merge branches, cherry-pick</li>
+              <li>Gitflow</li>
+              <li>Git internal structure</li>
+              <li>Git rebase</li>
+            </ul>
+          </li>
+          <li>CI/CD pipelines
+            <ul>
+              <li>Gitlab pipelines</li>
+              <li>Github actions</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>Solving problems
+        <ul>
+          <li>Monitoring and debug
+            <ul>
+              <li>Debugging and debuggers</li>
+              <li>Loggers and tools</li>
+              <li>Tests</li>
+              <li>Monitoring</li>
+              <li>Git bisect</li>
+            </ul>
+          </li>
+          <li>Design patterns</li>
+          <li>Refactoring technigs</li>
+        </ul>
+      </li>
+
+      <li>Software developing
+        <ul>
+          <li>Methodology
+            <ul>
+              <li>Agile, scrum</li>
+              <li>Other methodologies</li>
+              <li>Team and roles</li>
+              <li>Lifecycle of Software developing</li>
+            </ul>
+          </li>
+          <li>Bug trackers and task trackers
+            <ul>
+              <li>JIRA</li>
+              <li>TeamCity</li>
+              <li>Trello</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <script src="assets/js/render.js"></script>
+  </body>
+</html>
