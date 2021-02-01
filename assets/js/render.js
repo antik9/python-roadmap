@@ -132,7 +132,22 @@ window.onload = function updateTotalNumber() {
     if (!isRoot) isPublished ? ++totalPublished : ++totalNotPublished;
   }
 
-  document.getElementById('select-all').textContent = `All (${totalPublished + totalNotPublished})`;
-  document.getElementById('select-published').textContent = `Published (${totalPublished})`;
-  document.getElementById('select-not-published').textContent = `Not Published (${totalNotPublished})`;
+  const successRate = Math.round(totalPublished * 100 / (totalPublished + totalNotPublished));
+
+  document.getElementById('select-all').textContent =
+    `All (${totalPublished + totalNotPublished})`;
+  document.getElementById('select-published').textContent =
+    `Published (${totalPublished})`;
+  document.getElementById('select-not-published').textContent =
+    `Not Published (${totalNotPublished})`;
+  document.getElementById('progress-bar').textContent =
+    `${successRate}%`;
+
+  document.getElementById('progress-bar').style =`
+    width: ${successRate}%;
+    background-color: #28a745;
+    color: white;
+    line-height: 25px;
+    text-align: center;
+  `;
 };
